@@ -1,8 +1,62 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
 }
 
+.items-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  padding-top: 4rem;
+  min-height: 100vh;
+  background-color: rgb(124, 124, 124);
+}
 
+.row-container {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem 0;
+  margin-top: 1rem;
+  background-color: red;
+}
+
+.items-content {
+  width: 25%;
+  padding: 5px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.items-content img {
+  width: 200px;
+  height: 200px;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.information p {
+  text-align: right;
+}
+
+#id {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#logo {
+  position: absolute;
+  left: 0;
+  bottom: 1.5rem;
+}
