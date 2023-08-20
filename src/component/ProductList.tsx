@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPercent } from "@fortawesome/free-solid-svg-icons";
 
 export interface Response {
   Message: null;
@@ -52,32 +54,26 @@ export default function ProductList() {
         <div className="row-container">
           {data &&
             data.Content.GetAllSubProducts.map((product) => (
-              <div className="item-content">
-                <img src={product.ImageUrl} alt="" />
+              <div className="items-content">
+                <a href="">
+                  <img src={`https://portal.remasgallery.com/Images/Contents/${product.ImageUrl}`} alt={product.ProductName} />
+                </a>
                 <div className="information">
-                  <p>{product.CategoryTitle}</p>
+                  <a href="#">{product.CategoryTitle}</a>
                   <p>{product.ProductName}</p>
                   <p>{product.SumSubProductPrice}</p>
+                  <span id="logo">
+                    <FontAwesomeIcon icon={faPercent} />
+                  </span>
+                  <p id="id">{product.Product_Id}</p>
                   <p>{product.InStock}</p>
                 </div>
               </div>
             ))}
-          {/* <a href="#">
-              <img
-                src="https://st2.depositphotos.com/5906102/12446/v/950/depositphotos_124469958-stock-illustration-realistic-shining-green-emerald-jewel.jpg"
-                alt=""
-              />
-              <div className="information">
-                <p>category</p>
-                <p>name</p>
-                <p>price</p>
-                <p>mojodi</p>
-                <p id="id">id</p>
-                <p id="logo">log</p>
-              </div>
-            </a> */}
         </div>
       </div>
     </>
   );
 }
+
+// https://portal.remasgallery.com/Images/Contents
