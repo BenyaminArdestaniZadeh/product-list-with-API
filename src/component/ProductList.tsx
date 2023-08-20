@@ -56,18 +56,23 @@ export default function ProductList() {
             data.Content.GetAllSubProducts.map((product) => (
               <div className="items-content">
                 <a href="">
-                  <img src={`https://portal.remasgallery.com/Images/Contents/${product.ImageUrl}`} alt={product.ProductName} />
+                  <img
+                    src={`https://portal.remasgallery.com/Images/Contents/${product.ImageUrl}`}
+                    alt={product.ProductName}
+                  />
                 </a>
-                <div className="information">
-                  <a href="#">{product.CategoryTitle}</a>
-                  <p>{product.ProductName}</p>
-                  <p>{product.SumSubProductPrice}</p>
-                  <span id="logo">
+                <ul className="information">
+                  <li>
+                    <a href="#">{product.CategoryTitle}</a>
+                  </li>
+                  <li>{product.ProductName}</li>
+                  <li>{product.SumSubProductPrice} تومان</li>
+                  <li id="logo">
                     <FontAwesomeIcon icon={faPercent} />
-                  </span>
-                  <p id="id">{product.Product_Id}</p>
-                  <p>{product.InStock}</p>
-                </div>
+                  </li>
+                  <li id="id">{product.Product_Id}</li>
+                  <li>{product.InStock}</li>
+                </ul>
               </div>
             ))}
         </div>

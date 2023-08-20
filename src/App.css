@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 1rem;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .items-container {
@@ -37,19 +38,30 @@
 
 .items-content img {
   width: 13.7rem;
-  height: 18.7rem; 
+  height: 18.7rem;
   border-radius: 5px;
   object-fit: cover;
+  transition: all linear 150ms;
+}
+
+.items-content img:hover {
+  transform: scale(1.03);
+  filter: contrast(130%);
 }
 
 .information {
   width: 100%;
   display: flex;
+  padding: 1rem 0;
+  gap: 5px;
   flex-direction: column;
   align-items: end;
   position: relative;
 }
 
+.information li:nth-of-type(3) {
+  direction: rtl;
+}
 
 #id {
   position: absolute;
@@ -60,4 +72,11 @@
   position: absolute;
   left: 0;
   bottom: 1.5rem;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 35px;
+  color: white;
+  background-color: rgb(57, 174, 0);
 }
