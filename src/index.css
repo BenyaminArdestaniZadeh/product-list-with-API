@@ -1,10 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
   color: #242424;
-  background-color: #ffffff;
+  background-color: ivory;
 }
 
 a {
@@ -18,18 +23,14 @@ a {
 p {
   margin: 0;
   color: #767790;
-}
-ul {
-  list-style: none;
-}
-
-li {
-  word-spacing: 1px;
+  text-align: right;
+  font-size: 12px;
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: clamp(1.7rem, 6vw, 3.5rem);
   line-height: 1.1;
+  margin: 0.5rem 0 1.5rem 0;
 }
 
 button {

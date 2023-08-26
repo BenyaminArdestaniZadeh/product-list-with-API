@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPercent } from "@fortawesome/free-solid-svg-icons";
+import ProductCart from "./ProductCart";
 
 export interface Response {
   Message: null;
@@ -51,34 +50,9 @@ export default function ProductList() {
   return (
     <>
       <div className="items-container">
-        <div className="row-container">
-          {data &&
-            data.Content.GetAllSubProducts.map((product) => (
-              <div className="items-content">
-                <a href="">
-                  <img
-                    src={`https://portal.remasgallery.com/Images/Contents/${product.ImageUrl}`}
-                    alt={product.ProductName}
-                  />
-                </a>
-                <ul className="information">
-                  <li>
-                    <a href="#">{product.CategoryTitle}</a>
-                  </li>
-                  <li>{product.ProductName}</li>
-                  <li>{product.SumSubProductPrice} تومان</li>
-                  <li id="logo">
-                    <FontAwesomeIcon icon={faPercent} />
-                  </li>
-                  <li id="id">{product.Product_Id}</li>
-                  <li>{product.InStock}</li>
-                </ul>
-              </div>
-            ))}
-        </div>
+        <h1>محصولات</h1>
+        <ProductCart data={data} />
       </div>
     </>
   );
 }
-
-// https://portal.remasgallery.com/Images/Contents

@@ -1,46 +1,40 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1rem;
   text-align: center;
   box-sizing: border-box;
 }
 
 .items-container {
+  min-height: 145vh;
   display: flex;
   flex-direction: column;
   justify-content: start;
-  align-items: center;
-  width: 100%;
-  padding-top: 4rem;
-  min-height: 100vh;
+  align-items: left;
+  /* background-color: rgb(0, 255, 229); */
 }
 
 .row-container {
   display: flex;
-  gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
-  width: 100%;
-  padding: 1rem 0;
-  margin-top: 1rem;
+  gap: 0.5rem;
 }
 
 .items-content {
-  width: 17%;
-  padding: 5px;
+  max-width: 45%;
+  padding: 0.5rem 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  text-align: center;
+  position: relative;
 }
 
 .items-content img {
-  width: 13.7rem;
-  height: 18.7rem;
-  border-radius: 5px;
+  width: 100%;
   object-fit: cover;
+  border-radius: 5px;
   transition: all linear 150ms;
 }
 
@@ -52,31 +46,63 @@
 .information {
   width: 100%;
   display: flex;
-  padding: 1rem 0;
-  gap: 5px;
   flex-direction: column;
   align-items: end;
-  position: relative;
+  gap: 0.3rem;
+  margin-top: 1rem;
 }
 
-.information li:nth-of-type(3) {
+.information p:nth-of-type(2) {
   direction: rtl;
 }
 
 #id {
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 3%;
+  bottom: 20%;
 }
+
 #logo {
   position: absolute;
-  left: 0;
-  bottom: 1.5rem;
-  width: 35px;
-  height: 35px;
+  left: 3%;
+  bottom: 3%;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   text-align: center;
-  line-height: 35px;
+  line-height: 30px;
   color: white;
-  background-color: rgb(57, 174, 0);
+  background-color: rgba(58, 174, 0, 0.632);
+}
+
+@media only screen and (min-width: 400px) {
+  #id {
+    bottom: 17%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .items-content {
+    max-width: 31%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .items-content {
+    max-width: 23%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .items-content {
+    max-width: 19%;
+  }
+  #logo {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+  }
+  #id {
+    bottom: 16%;
+  }
 }
