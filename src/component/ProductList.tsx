@@ -41,7 +41,17 @@ export default function ProductList() {
       );
       const jsonData = await response.json();
       setData(jsonData);
-      console.log(jsonData);
+
+      const cloneProducts = jsonData.Content.GetAllSubProducts.map(
+        (item: GetAllSubProduct, index: number) => {
+          index % 2 === 0 ? (item.InStock = false) : (item.InStock = true);
+          item.InStock === true
+            ? (item.IsDiscounted = true)
+            : (item.IsDiscounted = false);
+          return item;
+        }
+      );
+      console.log(cloneProducts);
     } catch (error) {
       console.error("Error fetching data:", error);
     }

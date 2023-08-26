@@ -4,23 +4,20 @@
   text-align: center;
   box-sizing: border-box;
 }
-
 .items-container {
   min-height: 145vh;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: left;
-  /* background-color: rgb(0, 255, 229); */
 }
-
 .row-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.5rem;
+  margin-bottom: 2rem;
 }
-
 .items-content {
   max-width: 45%;
   padding: 0.5rem 0;
@@ -30,19 +27,16 @@
   align-items: center;
   position: relative;
 }
-
 .items-content img {
   width: 100%;
   object-fit: cover;
   border-radius: 5px;
   transition: all linear 150ms;
 }
-
 .items-content img:hover {
   transform: scale(1.03);
   filter: contrast(130%);
 }
-
 .information {
   width: 100%;
   display: flex;
@@ -50,19 +44,22 @@
   align-items: end;
   gap: 0.3rem;
   margin-top: 1rem;
+  padding: 0 0.5rem;
 }
-
 .information p:nth-of-type(2) {
   direction: rtl;
 }
-
 #id {
   position: absolute;
   left: 3%;
-  bottom: 20%;
+  bottom: 23.5%;
+  font-weight: bold;
+  padding: 2px 7px;
+  background-color: teal;
+  color: whitesmoke;
+  border-radius: 5px;
 }
-
-#logo {
+.discount-show {
   position: absolute;
   left: 3%;
   bottom: 3%;
@@ -72,37 +69,56 @@
   text-align: center;
   line-height: 30px;
   color: white;
+  background-color: rgba(107, 0, 174, 0.632);
+}
+.remove-discount {
+  opacity: 0;
+}
+.available-inStock,
+.not-available-inStock {
+  padding: 2px 7px;
+  border-radius: 5px;
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 12px;
+}
+.available-inStock {
   background-color: rgba(58, 174, 0, 0.632);
 }
-
+.not-available-inStock {
+  background-color: rgba(211, 4, 4, 0.632);
+}
 @media only screen and (min-width: 400px) {
   #id {
-    bottom: 17%;
+    bottom: 18%;
   }
 }
-
 @media only screen and (min-width: 600px) {
   .items-content {
     max-width: 31%;
   }
+  #id {
+    bottom: 20%;
+  }
+  .available-inStock,
+  .not-available-inStock {
+    font-size: 14px;
+    padding: 3px 8px;
+  }
 }
-
 @media only screen and (min-width: 768px) {
   .items-content {
     max-width: 23%;
   }
+  #id {
+    bottom: 21%;
+  }
 }
-
 @media only screen and (min-width: 992px) {
   .items-content {
     max-width: 19%;
   }
-  #logo {
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-  }
   #id {
-    bottom: 16%;
+    bottom: 20%;
   }
 }

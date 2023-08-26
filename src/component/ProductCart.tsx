@@ -1,6 +1,4 @@
 import { Response } from "./ProductList";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPercent } from "@fortawesome/free-solid-svg-icons";
 
 type Props = {
   data: Response | null;
@@ -23,11 +21,25 @@ export default function ProductCart({ data }: Props) {
                 <a href="#">{product.CategoryTitle}</a>
                 <p>{product.ProductName}</p>
                 <p>{product.SumSubProductPrice} تومان</p>
-                <p id="logo">
-                  <FontAwesomeIcon icon={faPercent} />
+                <p
+                  className={
+                    product.IsDiscounted === true
+                      ? "discount-show"
+                      : "remove-discount"
+                  }
+                >
+                  {product.IsDiscounted === true ? "%" : ""}
                 </p>
                 <p id="id">{product.Product_Id}</p>
-                <p>{product.InStock}</p>
+                <p
+                  className={
+                    product.InStock === true
+                      ? "available-inStock"
+                      : "not-available-inStock"
+                  }
+                >
+                  {product.InStock === true ? "موجود می باشد" : "اتمام موجودی"}
+                </p>
               </div>
             </div>
           ))}
