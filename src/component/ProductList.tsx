@@ -28,6 +28,7 @@ export interface GetAllSubProduct {
 }
 
 export default function ProductList() {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [data, setData] = useState<Response | null>(null);
 
   useEffect(() => {
@@ -35,6 +36,7 @@ export default function ProductList() {
   }, []);
 
   const fetchData = async () => {
+    setIsLoading(true);
     try {
       const response = await fetch(
         "https://api.remasgallery.com/Product/GetProductByFilter"
@@ -54,8 +56,18 @@ export default function ProductList() {
       console.log(cloneProducts);
     } catch (error) {
       console.error("Error fetching data:", error);
+    } finally {
+      setIsLoading(false);
     }
   };
+
+  if (isLoading) {
+    return (
+      <div className="loader-container">
+        <div className="spinner"></div>
+      </div>
+    );
+  }
 
   return (
     <>
